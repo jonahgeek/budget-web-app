@@ -8,10 +8,10 @@ const IncomeList = () => {
   console.log(incomeTransactions);
 
   return (
-    <div className="transactions transactions-income">
-      <h2>Transaction History</h2>
-      <ul className="transaction-list">
-        {incomeTransactions.map(incomeTransaction => (
+    <div className="mt-4">
+      <h6>Incomes</h6>
+      <ul class="list-group mt-4">
+        {incomeTransactions.map((incomeTransaction) => (
           <IncomeTransaction
             key={incomeTransaction.id}
             incomeTransaction={incomeTransaction}

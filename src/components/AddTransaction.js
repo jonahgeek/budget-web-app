@@ -66,49 +66,73 @@ const AddTransaction = () => {
   };
 
   return (
-    <div className="form-wrapper">
-      <form onSubmit={onSubmitIncome}>
-        <div className="input-group income">
-          <input
-            type="text"
-            name="incomeText"
-            value={incomeText}
-            placeholder="Add Income..."
-            autoComplete="off"
-            onChange={onChangeIncome}
-          />
-          <input
-            type="number"
-            name="incomeAmount"
-            value={incomeAmount}
-            placeholder="Amount"
-            autoComplete="off"
-            onChange={onChangeIncome}
-          />
-          <input type="submit" value="Submit" />
+    <div className="container mt-4">
+      <div className="row">
+        <div className="col-md">
+          <form onSubmit={onSubmitIncome}>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                name="incomeText"
+                value={incomeText}
+                placeholder="Add Income..."
+                autoComplete="off"
+                onChange={onChangeIncome}
+              />
+              <span class="input-group-text">$</span>
+              <input
+                type="number"
+                class="form-control"
+                name="incomeAmount"
+                value={incomeAmount}
+                placeholder="Amount"
+                autoComplete="off"
+                onChange={onChangeIncome}
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="submit"
+                id="button-addon2"
+              >
+                Create Income
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
-      <form onSubmit={onSubmitExpense}>
-        <div className="input-group expense">
-          <input
-            type="text"
-            name="expenseText"
-            value={expenseText}
-            placeholder="Add Expense..."
-            autoComplete="off"
-            onChange={onChangeExpense}
-          />
-          <input
-            type="number"
-            name="expenseAmount"
-            value={expenseAmount}
-            placeholder="Amount"
-            autoComplete="off"
-            onChange={onChangeExpense}
-          />
-          <input type="submit" value="Submit" />
+        <div className="col-md">
+          <form onSubmit={onSubmitExpense}>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                name="expenseText"
+                value={expenseText}
+                placeholder="Add Expense..."
+                autoComplete="off"
+                onChange={onChangeExpense}
+              />
+              <span class="input-group-text">$</span>
+              <input
+                type="number"
+                class="form-control"
+                name="expenseAmount"
+                value={expenseAmount}
+                placeholder="Amount"
+                autoComplete="off"
+                onChange={onChangeExpense}
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="submit"
+                id="button-addon2"
+              >
+                Create Expense
+              </button>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   );
 };

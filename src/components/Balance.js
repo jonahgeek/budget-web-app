@@ -5,11 +5,11 @@ const Balance = () => {
   const { incomeTransactions, expenseTransactions } = useContext(GlobalContext);
 
   const incomeAmounts = incomeTransactions.map(
-    incomeTransaction => incomeTransaction.incomeAmount
+    (incomeTransaction) => incomeTransaction.incomeAmount
   );
 
   const expenseAmounts = expenseTransactions.map(
-    expenseTransaction => expenseTransaction.expenseAmount
+    (expenseTransaction) => expenseTransaction.expenseAmount
   );
 
   const totalIncome = incomeAmounts
@@ -21,17 +21,25 @@ const Balance = () => {
     .toFixed(2);
 
   return (
-    <div className="balance">
-      <h2>Your Balance</h2>
-      <h3>${(totalIncome - totalExpenses).toFixed(2)}</h3>
-      <div className="income-expense">
-        <div className="plus">
-          <h3>Income</h3>
-          <p>+${totalIncome}</p>
-        </div>
-        <div className="minus">
-          <h3>Expenses</h3>
-          <p>-${totalExpenses}</p>
+    <div className="card mt-4 mb-4">
+      <div className="card-body">
+        <div className="row">
+          <div className="col-md">
+            <h2>Transactions</h2>
+          </div>
+          <div className="col-md">
+            <div className="row">
+              <div className="col-md">
+                Balance <br />${(totalIncome - totalExpenses).toFixed(2)}
+              </div>
+              <div className="col-md">
+                Income <br /><span style={{ color: 'green' }}>+ ${totalIncome}</span>
+              </div>
+              <div className="col-md">
+                Expenses <br /><span style={{ color: 'red'}}>- ${totalExpenses}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
